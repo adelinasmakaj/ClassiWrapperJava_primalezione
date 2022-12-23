@@ -1,0 +1,81 @@
+import java.sql.SQLOutput;
+
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Classi Wrapper in Java");
+        /*
+        Scopo di queste classi: quello di trattare i tipi primitivi come oggetti
+        Primitivi a cui corrisponde una classe ---> WRAPPER
+        Esempio:
+        x la gestione dei numeri: ordine crescente
+        byte    -----> Byte
+        short   -----> Short
+        int     -----> Integer
+        long    -----> Long
+        double  -----> Double
+        flot    -----> Flot
+        x la gestione dei caratteri:
+        char    -----> Char
+        boolean -----> Boolean
+
+
+
+         */
+       //  01)--------  COME CREARE LE CLASSI ---------
+       // ------------   1 metodo -------------
+      /*  Integer n= new Integer(50); //oggetto con valore di 50
+        Float f= new Float(50.50); //deprecato */
+
+        // ------------  2 metodo -------------
+        Integer numero =50; //corretto (boxing). Metodo + veloce
+        Float numeroDecimale= 50.41f;
+
+        int mioNumero= numero; // dichiarazione :lo posso usare in una variabile primitiva
+
+        ////-----02) ACQUISIRI I VALORI NUMERICI INTERI DA FORMATO STRING ------
+        String numeroFortunato= "10"; //dobbiamo convertire la string per contenere valori int
+        int numeroConvertito= Integer.parseInt(numeroFortunato.trim()); // converte solo formati numerici con risultati interi .trim lo uso per togliere i numeri finali
+        System.out.println(numeroConvertito*numeroConvertito);
+
+
+        ////-----03) ACQUISIRI I VALORI NUMERICI DECIMALI DA FORMATO STRING ------
+        String peso= "10.50"; //trasformo un numero decimale
+        float pesoMerca = Float.parseFloat(peso); //lo converto da stringa a numero
+
+
+        ////-----04) TRASFORMO UN NUMERO IN STRINGA ------
+        int a= 150; //converto in stringa il mio valore 150
+        String numeroInStringa= String.valueOf(a); //traformo il numero in stringa usando valueOf()
+        System.out.println(numeroInStringa);
+
+        ////-----05) VERIFICO SE IL CARATTERE E UNA CIFRA(digit) O UNA LETTERA (letter)  ------
+        /*
+        uso Charachter:
+         metodo isLetter (carattere) ---> torna True/False
+         metodo idDigit (cifra) -----> torna True/False
+         */
+         char carattereA = 'a';
+         char cifraA= '5';
+         //controllo se il carattere in carattereA è una cifra o una lettera
+        boolean controllo = Character.isLetter(carattereA); //inserisco una variabile boolean e con Character + metodo .isLetter se a e una lettera
+        boolean controllo2= Character.isDigit(carattereA); //inserisco una variabile boolean e con Character + metodo  .isDigit se a e una cifra
+        System.out.println(controllo2);
+
+
+
+        ////----- 06) VERIFICO SE IL CARATTERE E UNA CIFRA(digit) O UNA LETTERA (letter)  ------
+        //       ------ USANDO LA LINEA DI COMANDO E  AQUISENDO IL VALORE DA ARGS --------
+        String numero1= args [0]; //acquisisco il valore contenuto alla posizione 0 dell'array args
+        System.out.println( "il numero passato da righa di comando è " + args[0]);
+        int numeroDaEsterno= Integer.parseInt(args[0]);
+        System.out.println("il doppio del numero è " + (numeroDaEsterno*2));
+
+        int numeroDaEsterno2= Integer.parseInt(args[1]);
+        System.out.println("Somma= " + (numeroDaEsterno+numeroDaEsterno2));
+        //HO DATO IL VALORE AD ARGS ANDANDO SU RUN CONFIGURATION, INSERENDO UN APPLICAZIONE, INSERENDO
+        //LA CLASSE E AGGIUNGENDO IL VALORE. I NUMERI DEVONO ESSERE SEPARATI DALLO SPAZIO
+        
+
+    } 
+    }
